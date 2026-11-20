@@ -1,0 +1,47 @@
+# ============================================
+# Godot 4+ specific ignores
+# ============================================
+.godot/
+.nomedia
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+*.translation
+
+# ============================================
+# Mono / .NET specific ignores
+# ============================================
+.mono/
+data_*/
+mono_crash.*.json
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+
+# ============================================
+# Build output
+# ============================================
+export/
+build/
+*.exe
+*.dll
+*.pdb
+
+# ============================================
+# IDE / Editor
+# ============================================
+.vs/
+.idea/
+.vscode/
+*.sln.DotSettings.user
+
+# ============================================
+# OS generated files
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
