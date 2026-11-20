@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dst8gmjywcyyc"]
+
+[ext_resource type="Script" uid="uid://dr6or14ojqt5c" path="res://scripts/Weapons/Weapon.cs" id="1_cndss"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wb3dc"]
+size = Vector3(0.1, 0.15, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr4f7"]
+albedo_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+
+[node name="Weapon" type="Node3D" unique_id=1857422675]
+script = ExtResource("1_cndss")
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=856797168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.25, -0.6)
+mesh = SubResource("BoxMesh_wb3dc")
+surface_material_override/0 = SubResource("StandardMaterial3D_vr4f7")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1704793082]
+target_position = Vector3(0, 0, -100)
+
+[node name="MuzzleFlash" type="OmniLight3D" parent="." unique_id=520044583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.2, -0.9)
+light_color = Color(1.0039216, 0.9999855, 0.40956363, 1)
+light_energy = 5.0

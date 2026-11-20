@@ -1,5 +1,16 @@
 # CHANGELOG — FPS Online Game
 
+## [0.3.0] — 2026-11-20
+
+### Added
+- `client/scripts/Weapons/Weapon.cs`: سلاح Hitscan بـ RayCast3D + MuzzleFlash.
+- `client/scenes/Weapons/Weapon.tscn`: مشهد السلاح (Model + RayCast3D + OmniLight3D).
+- إجراء `fire` في Input Map (زر الفأرة الأيسر).
+- ربط `Weapon.tscn` بـ `Camera3D` داخل `PlayerController.tscn`.
+
+### Tests
+- اختبار محلي: Raycast يصيب الأرضية والجدران، ويطبع نقطة الاصطدام والمتجه الطبيعي. Miss عند التصويب نحو السماء.
+
 ## [0.2.0] — 2026-11-20
 
 ### Added

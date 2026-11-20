@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bei4nhkf8lwdo"]
+[gd_scene format=3 uid="uid://bei4nhkf8lwdo"]
 
 [ext_resource type="Script" uid="uid://bbbrf5ckydfna" path="res://addons/player_controller/Scripts/PlayerController.cs" id="1_poq2x"]
 [ext_resource type="Material" uid="uid://dtq8i1ka1f2pn" path="res://addons/player_controller/Shaders/CameraVignette.tres" id="2_6hee7"]
 [ext_resource type="Material" uid="uid://nyh5tn1yoxeu" path="res://addons/player_controller/Shaders/CameraDistortion.tres" id="3_mxh1y"]
 [ext_resource type="Shader" uid="uid://btw6vsb6sa7sn" path="res://addons/player_controller/Shaders/Blur.gdshader" id="4_jyscr"]
 [ext_resource type="Script" uid="uid://dv7v1ywmbvvcd" path="res://addons/player_controller/Scripts/HealthSystem.cs" id="5_umw0l"]
+[ext_resource type="PackedScene" uid="uid://dst8gmjywcyyc" path="res://scenes/Weapons/weapon.tscn" id="6_jkvsg"]
 [ext_resource type="Script" uid="uid://vuq8rjq3vegn" path="res://addons/player_controller/Scripts/Stamina.cs" id="6_lxtc4"]
 [ext_resource type="Script" uid="uid://cwbvxlfvmocc1" path="res://addons/player_controller/Scripts/StairsSystem.cs" id="7_bmt5a"]
 [ext_resource type="Script" uid="uid://dd1yrt7eiiyf4" path="res://addons/player_controller/Scripts/CapsuleCollider.cs" id="8_lmtjd"]
@@ -107,33 +108,33 @@ _data = {
 &"players_head_on_dying": SubResource("Animation_6iwn4")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=336530614]
 floor_snap_length = 0.24
 script = ExtResource("1_poq2x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=196276654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 32
 mesh = SubResource("CapsuleMesh_xc2g5")
 
-[node name="CapsuleCollider" type="CollisionShape3D" parent="."]
+[node name="CapsuleCollider" type="CollisionShape3D" parent="." unique_id=364308183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_wydro")
 script = ExtResource("8_lmtjd")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=608340945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68, 0)
 
-[node name="CameraSmooth" type="Node3D" parent="Head"]
+[node name="CameraSmooth" type="Node3D" parent="Head" unique_id=1548787814]
 
-[node name="Camera3D" type="Camera3D" parent="Head/CameraSmooth"]
+[node name="Camera3D" type="Camera3D" parent="Head/CameraSmooth" unique_id=857060328]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 cull_mask = 1048543
 current = true
 
-[node name="CLVignette(Layer_1)" type="CanvasLayer" parent="Head/CameraSmooth/Camera3D"]
+[node name="CLVignette(Layer_1)" type="CanvasLayer" parent="Head/CameraSmooth/Camera3D" unique_id=164577728]
 
-[node name="HealthVignetteRect" type="ColorRect" parent="Head/CameraSmooth/Camera3D/CLVignette(Layer_1)"]
+[node name="HealthVignetteRect" type="ColorRect" parent="Head/CameraSmooth/Camera3D/CLVignette(Layer_1)" unique_id=27569666]
 material = ExtResource("2_6hee7")
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,10 +143,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CLDistortion(Layer_2)" type="CanvasLayer" parent="Head/CameraSmooth/Camera3D"]
+[node name="CLDistortion(Layer_2)" type="CanvasLayer" parent="Head/CameraSmooth/Camera3D" unique_id=1997312591]
 layer = 2
 
-[node name="HealthDistortionRect" type="ColorRect" parent="Head/CameraSmooth/Camera3D/CLDistortion(Layer_2)"]
+[node name="HealthDistortionRect" type="ColorRect" parent="Head/CameraSmooth/Camera3D/CLDistortion(Layer_2)" unique_id=409563070]
 material = ExtResource("3_mxh1y")
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,10 +155,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CLBlur(Layer_2)" type="CanvasLayer" parent="Head/CameraSmooth/Camera3D"]
+[node name="CLBlur(Layer_2)" type="CanvasLayer" parent="Head/CameraSmooth/Camera3D" unique_id=171148815]
 layer = 2
 
-[node name="BlurRect" type="ColorRect" parent="Head/CameraSmooth/Camera3D/CLBlur(Layer_2)"]
+[node name="BlurRect" type="ColorRect" parent="Head/CameraSmooth/Camera3D/CLBlur(Layer_2)" unique_id=1405045638]
 material = SubResource("ShaderMaterial_o1np4")
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,58 +167,58 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/CameraSmooth/Camera3D"]
+[node name="RayCast3D" type="RayCast3D" parent="Head/CameraSmooth/Camera3D" unique_id=143809035]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.64723)
 visible = false
 
-[node name="HealthSystem" type="Node3D" parent="."]
+[node name="Weapon" parent="Head/CameraSmooth/Camera3D" unique_id=1857422675 instance=ExtResource("6_jkvsg")]
+
+[node name="HealthSystem" type="Node3D" parent="." unique_id=992974710]
 script = ExtResource("5_umw0l")
 
-[node name="Stamina" type="Node3D" parent="."]
+[node name="Stamina" type="Node3D" parent="." unique_id=1393300736]
 script = ExtResource("6_lxtc4")
 
-[node name="StairsAheadRayCast3D" type="RayCast3D" parent="."]
+[node name="StairsAheadRayCast3D" type="RayCast3D" parent="." unique_id=921050391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.828)
 target_position = Vector3(0, -0.55, 0)
 
-[node name="StairsBelowRayCast3D" type="RayCast3D" parent="."]
+[node name="StairsBelowRayCast3D" type="RayCast3D" parent="." unique_id=867456306]
 target_position = Vector3(0, -0.75, 0)
 
-[node name="StairsSystem" type="Node3D" parent="."]
+[node name="StairsSystem" type="Node3D" parent="." unique_id=1433286204]
 script = ExtResource("7_bmt5a")
 
-[node name="Gravity" type="Node3D" parent="."]
+[node name="Gravity" type="Node3D" parent="." unique_id=923545604]
 script = ExtResource("9_lsueh")
 
-[node name="Bobbing" type="Node3D" parent="."]
+[node name="Bobbing" type="Node3D" parent="." unique_id=5955601]
 script = ExtResource("10_7wk1w")
 
-[node name="Mouse" type="Node3D" parent="."]
+[node name="Mouse" type="Node3D" parent="." unique_id=1975701557]
 script = ExtResource("11_huhen")
 
-[node name="FieldOfView" type="Node3D" parent="."]
+[node name="FieldOfView" type="Node3D" parent="." unique_id=1791793390]
 script = ExtResource("12_m2mxi")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_vd0e2")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1480758706]
+libraries/ = SubResource("AnimationLibrary_vd0e2")
 script = ExtResource("13_vnh4e")
 
-[node name="HeadCollisionDetectors" type="Node3D" parent="."]
+[node name="HeadCollisionDetectors" type="Node3D" parent="." unique_id=2039566865]
 
-[node name="HeadCollisionDetector0" type="RayCast3D" parent="HeadCollisionDetectors"]
+[node name="HeadCollisionDetector0" type="RayCast3D" parent="HeadCollisionDetectors" unique_id=2055932430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -0.210707)
 target_position = Vector3(0, 1, 0)
 
-[node name="HeadCollisionDetector1" type="RayCast3D" parent="HeadCollisionDetectors"]
+[node name="HeadCollisionDetector1" type="RayCast3D" parent="HeadCollisionDetectors" unique_id=175529086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.23061)
 target_position = Vector3(0, 1, 0)
 
-[node name="HeadCollisionDetector2" type="RayCast3D" parent="HeadCollisionDetectors"]
+[node name="HeadCollisionDetector2" type="RayCast3D" parent="HeadCollisionDetectors" unique_id=40046317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.296, 1.4, 0)
 target_position = Vector3(0, 1, 0)
 
-[node name="HeadCollisionDetector3" type="RayCast3D" parent="HeadCollisionDetectors"]
+[node name="HeadCollisionDetector3" type="RayCast3D" parent="HeadCollisionDetectors" unique_id=401588086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296, 1.4, 0)
 target_position = Vector3(0, 1, 0)
