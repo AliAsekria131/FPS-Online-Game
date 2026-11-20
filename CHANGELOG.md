@@ -1,5 +1,17 @@
 # CHANGELOG — FPS Online Game
 
+## [0.2.0] — 2026-11-20
+
+### Added
+- استيراد PolarBears Player Controller إلى `client/addons/player_controller`.
+- إعداد Input Map للحركة (`move_forward/back/left/right`, `jump`, `crouch`, `sprint`).
+- إنشاء `client/scenes/TestMap.tscn` (أرضية، جدار، إضاءة بدون ظلال).
+- اختبار الحركة محلياً: ناجح.
+
+### Technical Decisions
+- تعطيل ظلال `DirectionalLight3D` في خريطة الاختبار لتوفير موارد GPU (كرت 128MB).
+- الاحتفاظ بمجلد PolarBears `Examples/` كمصدر مرجعي (سيُنظّف في مهمة لاحقة).
+
 ## [0.1.0] — 2026-11-20
 
 ### Added
