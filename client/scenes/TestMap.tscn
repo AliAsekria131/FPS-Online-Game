@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://r5uhk83mhq25"]
+
+[ext_resource type="PackedScene" uid="uid://bei4nhkf8lwdo" path="res://addons/player_controller/PlayerController.tscn" id="1_fodck"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wb3dc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr4f7"]
+albedo_color = Color(0.27752784, 0.2775277, 0.27752766, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wb3dc"]
+material = SubResource("StandardMaterial3D_vr4f7")
+
+[node name="TestMap" type="Node3D" unique_id=1078092376]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1373771797]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1513290956]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_wb3dc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2030448247]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_wb3dc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=453944066]
+transform = Transform3D(-0.811178, -0.5750851, 0.10614717, -0.5216491, 0.79360694, 0.31316125, -0.26433355, 0.19865796, -0.94374925, 8.811168, 28.120314, 0)
+
+[node name="Player" parent="." unique_id=1249782638 instance=ExtResource("1_fodck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

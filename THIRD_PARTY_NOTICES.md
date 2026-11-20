@@ -9,10 +9,11 @@
 | البند | التفاصيل |
 |---|---|
 | **المصدر** | https://github.com/PolarBears-studio/player-controller |
+| **الإصدار** | main (آخر تحديث 2025-07-21) |
 | **الوصف** | FPS Player Controller لـ Godot 4.4+ (C#) |
-| **الترخيص** | MIT[reference:4] |
-| **الاستخدام** | أساس لحركة اللاعب في `client/` |
-| **التعديلات** | لم تُجرَ بعد (سيتم توثيقها عند الدمج) |
+| **الترخيص** | MIT (ملف LICENSE داخل `addons/player_controller/`) |
+| **الاستخدام** | أساس لحركة اللاعب في `client/addons/player_controller` |
+| **التعديلات** | لم تُجرَ بعد |
 
 ---
 

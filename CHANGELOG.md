@@ -17,3 +17,12 @@
 
 ### Known Issues
 - لم يتم إنشاء مشاريع Godot بعد (المهمة 0.3).
+
+### Fixed
+- حذف مجلد `client/fps.client/` المكرر (بقايا إنشاء مشروع Godot الأول قبل نقل الملفات يدوياً). الملف المرجعي هو `client/FPS.Client.csproj` في جذر المشروع.
+
+### Added
+- استيراد PolarBears Player Controller إلى `client/addons/player_controller`.
+- إعداد Input Map للحركة (WASD + Space + Ctrl + Shift).
+- إنشاء `client/scenes/TestMap.tscn` (أرضية وجدار وإضاءة بسيطة).
+- اختبار الحركة محلياً بنجاح.
